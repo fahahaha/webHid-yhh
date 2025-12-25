@@ -1,0 +1,50 @@
+appId: com.electron.app
+productName: webhid-bojuxi
+directories:
+  buildResources: build
+files:
+  - '!**/.vscode/*'
+  - '!src/*'
+  - '!electron.vite.config.{js,ts,mjs,cjs}'
+  - '!{.eslintcache,eslint.config.mjs,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
+  - '!{.env,.env.*,.npmrc,pnpm-lock.yaml}'
+  - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
+asarUnpack:
+  - resources/**
+win:
+  executableName: webhid-bojuxi
+nsis:
+  artifactName: ${name}-${version}-setup.${ext}
+  shortcutName: ${productName}
+  uninstallDisplayName: ${productName}
+  createDesktopShortcut:
+    always
+    # ↓↓↓ 新增这些行：切换成 Assisted 模式 + 允许改路径
+  oneClick: false # 禁用一键安装 → 显示多页面向导（欢迎、许可、路径选择、快捷方式、完成）
+  perMachine: false # 安装到用户目录（无需管理员权限）
+  allowToChangeInstallationDirectory: true # 允许用户选择安装路径（默认路径：C:\Users\你的用户名\AppData\Local\Programs\wangyiyun）
+  allowElevation: true # 如果用户想全系统安装，允许提升权限
+  runAfterFinish: true # 安装完后可选“启动应用”
+mac:
+  entitlementsInherit: build/entitlements.mac.plist
+  extendInfo:
+    - NSCameraUsageDescription: Application requests access to the device's camera.
+    - NSMicrophoneUsageDescription: Application requests access to the device's microphone.
+    - NSDocumentsFolderUsageDescription: Application requests access to the user's Documents folder.
+    - NSDownloadsFolderUsageDescription: Application requests access to the user's Downloads folder.
+  notarize: false
+dmg:
+  artifactName: ${name}-${version}.${ext}
+linux:
+  target:
+    - AppImage
+    - snap
+    - deb
+  maintainer: electronjs.org
+  category: Utility
+appImage:
+  artifactName: ${name}-${version}.${ext}
+npmRebuild: false
+publish:
+  provider: generic
+  url: https://example.com/auto-updates

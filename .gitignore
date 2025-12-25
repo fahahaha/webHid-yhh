@@ -1,0 +1,24 @@
+# 依赖目录
+node_modules
+
+# 构建输出
+dist
+dist-web
+out
+build
+
+# IDE配置文件
+.idea
+.vscode
+*.iml
+
+# 系统文件
+.DS_Store
+
+# 缓存和日志
+.eslintcache
+*.log*
+
+# Docker临时文件（如果有）
+docker/volumes
+docker/*.log

@@ -1,0 +1,118 @@
+/* 全局主题变量 */
+
+/* 浅色主题（默认） */
+:root {
+  /* 主色调 */
+  --color-primary: #165dff;
+  --color-secondary: #36cfc9;
+  --color-accent: #722ed1;
+  --color-success: #00b42a;
+  --color-warning: #ff7d00;
+  --color-danger: #f53f3f;
+
+  /* 背景色 */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f5f6f7;
+  --bg-hover: rgba(22, 93, 255, 0.05);
+  --bg-active: rgba(22, 93, 255, 0.1);
+
+  /* 文字颜色 */
+  --text-primary: #1d2129;
+  --text-secondary: #4e5969;
+  --text-tertiary: #86909c;
+  --text-disabled: #c9cdd4;
+
+  /* 边框颜色 */
+  --border-primary: #e5e6eb;
+  --border-secondary: #f2f3f5;
+  --border-hover: #165dff;
+
+  /* 阴影 */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* 状态图标背景 */
+  --icon-bg-battery: rgba(22, 93, 255, 0.1);
+  --icon-bg-report: rgba(54, 207, 201, 0.1);
+  --icon-bg-dpi: rgba(114, 46, 209, 0.1);
+  --icon-bg-backlight: rgba(255, 125, 0, 0.1);
+
+  /* 通知背景 */
+  --notify-success-bg: rgba(0, 180, 42, 0.1);
+  --notify-success-border: rgba(0, 180, 42, 0.3);
+  --notify-error-bg: rgba(245, 63, 63, 0.1);
+  --notify-error-border: rgba(245, 63, 63, 0.3);
+  --notify-warning-bg: rgba(255, 125, 0, 0.1);
+  --notify-warning-border: rgba(255, 125, 0, 0.3);
+  --notify-info-bg: rgba(22, 93, 255, 0.1);
+  --notify-info-border: rgba(22, 93, 255, 0.3);
+}
+
+/* 深色主题 */
+[data-theme='dark'] {
+  /* 主色调 - 略微调亮以保持可读性 */
+  --color-primary: #4080ff;
+  --color-secondary: #57d8d4;
+  --color-accent: #9254de;
+  --color-success: #23c343;
+  --color-warning: #ff9a2e;
+  --color-danger: #f76560;
+
+  /* 背景色 - 深色调 */
+  --bg-primary: #17171a;
+  --bg-secondary: #232324;
+  --bg-tertiary: #2e2e30;
+  --bg-hover: rgba(64, 128, 255, 0.15);
+  --bg-active: rgba(64, 128, 255, 0.25);
+
+  /* 文字颜色 - 反转并调整对比度 */
+  --text-primary: #e8e8e9;
+  --text-secondary: #c9cdd4;
+  --text-tertiary: #86909c;
+  --text-disabled: #5c5f66;
+
+  /* 边框颜色 - 深色调 */
+  --border-primary: #3a3a3c;
+  --border-secondary: #2e2e30;
+  --border-hover: #4080ff;
+
+  /* 阴影 - 更深的阴影效果 */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+
+  /* 状态图标背景 - 深色背景下的半透明效果 */
+  --icon-bg-battery: rgba(64, 128, 255, 0.2);
+  --icon-bg-report: rgba(87, 216, 212, 0.2);
+  --icon-bg-dpi: rgba(146, 84, 222, 0.2);
+  --icon-bg-backlight: rgba(255, 154, 46, 0.2);
+
+  /* 通知背景 - 深色主题下的通知样式 */
+  --notify-success-bg: rgba(35, 195, 67, 0.2);
+  --notify-success-border: rgba(35, 195, 67, 0.4);
+  --notify-error-bg: rgba(247, 101, 96, 0.2);
+  --notify-error-border: rgba(247, 101, 96, 0.4);
+  --notify-warning-bg: rgba(255, 154, 46, 0.2);
+  --notify-warning-border: rgba(255, 154, 46, 0.4);
+  --notify-info-bg: rgba(64, 128, 255, 0.2);
+  --notify-info-border: rgba(64, 128, 255, 0.4);
+}
+
+/* 平滑的主题切换过渡效果 */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+/* 保持某些元素的过渡效果不受影响 */
+.notification,
+.tab-button,
+.btn-language,
+.language-option {
+  transition: all 0.2s ease-in-out !important;
+}
