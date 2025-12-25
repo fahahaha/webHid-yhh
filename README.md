@@ -1,4 +1,4 @@
-# WebHID-Bojuxi 通用游戏鼠标驱动
+# WebHID-yhh 通用游戏鼠标驱动
 
 基于 Electron + Vue 3 + TypeScript 的跨平台游戏鼠标驱动程序，支持通过 WebHID API 与多种品牌游戏鼠标进行通信和配置。
 
